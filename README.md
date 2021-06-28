@@ -42,7 +42,7 @@ just to illustrate how to achieve these in Angular.
 - The frontend Angular part has the required simplified unit tests.
 
 - The application changes the statuses of the Teams as requested by the assignment.
-First Login using the desired user account from the previous steps. Then navigate back to the Home page
+First Login using the desired role account from the previous steps (ROLE_USER and unauthorized users cannot see the Team Status table on Home page. You need to login with the users having either ROLE_MANAGER or ROLE_DIRECTOR). Then navigate back to the Home page
 to be able to change Team statuses.
   
 In the below screenshot you can see the 4 teams inserted by the data.sql script from the backend application
