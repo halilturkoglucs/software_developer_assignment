@@ -1,0 +1,62 @@
+<app-alert-box *ngIf="statusChanged" [message]="statusSavedMsg" (close)="onAlertBoxClose()"></app-alert-box>
+<div class="container">
+  <p [ngClass]="getWelcomeMessageClass()">{{ content }}</p>
+  <hr>
+
+  <div class="row" *ngIf="authorizedToApprove">
+    <div class="col">
+      <div class="table-responsive team-table">
+        <table class="table table-bordered centered">
+          <thead>
+          <tr>
+            <th [ngStyle]="{textAlign: 'center', color: 'white'}" class="bg-primary" colspan="4">Team Status</th>
+          </tr>
+          <tr>
+            <th class="col-8">Team Name</th>
+            <th class="col-2">Approved by Manager</th>
+            <th class="col-2">Approved by Director</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let team of teams; let i = index">
+            <td class="col-8" [ngStyle]="{textAlign: 'left'}">{{ team.name }}</td>
+            <td class="col-2">
+              <span class="icon">
+                <div tooltip>
+                  <a (click)="setManagerApprovalStatus(team.id, team.managerApprovalStatus)">
+                    <img src="{{'assets/icons/' + getStatusIcon(team.managerApprovalStatus)}}" class="img-fluid"
+                         alt="{{getStatusTooltip(team.managerApprovalStatus)}}">
+                  </a>
+                  <ng-template #tooltipTemplate>
+                      <div class="hover-tooltip">
+                        {{getStatusTooltip(team.managerApprovalStatus)}}
+                      </div>
+                  </ng-template>
+                </div>
+              </span>
+            </td>
+            <td class="col-2">
+              <span class="icon">
+                <a (click)="setDirectorApprovalStatus(team.id, team.directorApprovalStatus)">
+                  <img src="{{'assets/icons/' + getStatusIcon(team.directorApprovalStatus)}}" class="img-fluid"
+                       alt="{{getStatusTooltip(team.directorApprovalStatus)}}">
+                </a>
+              </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <footer class="text-center text-lg-start bg-light text-muted">
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>

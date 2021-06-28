@@ -1,0 +1,8 @@
+<div class="container">
+  <header class="jumbotron">
+    <p>{{ content }}</p>
+    <p> This is the common content seen by all user roles.</p>
+    <p *ngIf="!authorizedToApprove"> Please navigate to the Home page but please be informed that
+      you do not have any permissions to see or approve any team statuses.</p>
+  </header>
+</div>

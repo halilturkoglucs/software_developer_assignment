@@ -1,0 +1,36 @@
+.welcomeMsg {
+  margin-top: 3%;
+  font-weight: 613;
+}
+
+.team-table {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  z-index: 1;
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered th {
+  vertical-align: top;
+}
+
+.icon img {
+  width: 30%;
+}
+
+.hover-tooltip {
+  background-color: gray;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 2;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}

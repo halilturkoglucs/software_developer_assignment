@@ -1,0 +1,4 @@
+li.active a.nav-link {
+  font-weight: bold;
+  color: white;
+}
