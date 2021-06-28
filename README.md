@@ -73,7 +73,9 @@ this, you need to change in the environments.ts and environments.prod.ts too.
 
 ### Development server
 
-Run `npm start` for a dev server that runs on 8081.
+Run `npm install` to install the dependencies.
+
+Then, run `npm start` for a dev server that runs on 8081.
 Navigate to `http://localhost:8081/`.
 The app will automatically reload if you change any of the source files.
 
